@@ -4,32 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator Luas Bangun Datar</title>
-    <script src="calc.js" defer></script> <!-- Memuat file JavaScript eksternal -->
+    <script src="calc.js" defer></script> <!-- Memuat JavaScript eksternal -->
 </head>
 <body>
+
     <h2>Kalkulator Luas Bangun Datar</h2>
 
     <h3>Persegi Panjang</h3>
-    <label>Panjang:</label>
-    <input type="number" id="p"><br>
-    <label>Lebar:</label>
-    <input type="number" id="l"><br>
-    <button onclick="hitungPersegiPanjang()">Hitung Luas</button>
-    <span id="LuasPersegiPanjang"></span>
+    <p>Panjang: <b>10</b>, Lebar: <b>5</b></p>
+    <button onclick="hitungLuasPersegiPanjang()">Hitung Luas</button>
+    <p>Hasil: <span id="hasilPersegiPanjang"></span></p>
 
     <h3>Persegi</h3>
-    <label>Sisi:</label>
-    <input type="number" id="S"><br>
-    <button onclick="hitungPersegi()">Hitung Luas</button>
-    <span id="LuasPersegi"></span>
+    <p>Sisi: <b>7</b></p>
+    <button onclick="hitungLuasPersegi()">Hitung Luas</button>
+    <p>Hasil: <span id="hasilPersegi"></span></p>
 
     <h3>Segitiga</h3>
-    <label>Alas:</label>
-    <input type="number" id="alas"><br>
-    <label>Tinggi:</label>
-    <input type="number" id="tinggi"><br>
-    <button onclick="hitungSegitiga()">Hitung Luas</button>
-    <span id="LuasTriangle"></span>
+    <p>Alas: <b>8</b>, Tinggi: <b>6</b></p>
+    <button onclick="hitungLuasSegitiga()">Hitung Luas</button>
+    <p>Hasil: <span id="hasilSegitiga"></span></p>
 
 </body>
 </html>

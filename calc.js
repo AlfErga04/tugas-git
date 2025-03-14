@@ -1,40 +1,25 @@
-// Ini function buat ngitung persegi panjangnya ya ges ya
-function hitungPersegiPanjang() {
-    let panjang = parseFloat(document.getElementById("p").value);
-    let lebar = parseFloat(document.getElementById("l").value);
-    
-    if (isNaN(panjang) || isNaN(lebar)) {
-        document.getElementById("LuasPersegiPanjang").innerText = " Angkanya tidak ada coy";
-        return;
-    }
-
+// Ngitung luas persegi panjang dengan (panjang = 10, lebar = 5)
+function hitungLuasPersegiPanjang() {
+    let panjang = 10;
+    let lebar = 5;
     let luas = panjang * lebar;
-    document.getElementById("LuasPersegiPanjang").innerText = " Luas nya itu: " + luas;
+
+    document.getElementById("hasilPersegiPanjang").innerText = `Luas persegi panjangnya = ${luas}`;
 }
 
-// Ini buat ngitung persegi dia
-function hitungPersegi() {
-    let sisi = parseFloat(document.getElementById("S").value);
-
-    if (isNaN(sisi)) {
-        document.getElementById("LuasPersegi").innerText = " Dimana angkanya";
-        return;
-    }
-
+// Menghitung luas persegi (sisi = 7)
+function hitungLuasPersegi() {
+    let sisi = 7;
     let luas = sisi * sisi;
-    document.getElementById("LuasPersegi").innerText = " Nih hasil Luas: " + luas;
+
+    document.getElementById("hasilPersegi").innerText = `Luas persegi nih: ${luas}`;
 }
 
-// Fungsi untuk menghitung luas segitiga
-function hitungSegitiga() {
-    let alas = parseFloat(document.getElementById("alas").value);
-    let tinggi = parseFloat(document.getElementById("tinggi").value);
-
-    if (isNaN(alas) || isNaN(tinggi)) {
-        document.getElementById("LuasTriangle").innerText = " Yang bener aja";
-        return;
-    }
-
+// Menghitung luas segitiga (alas = 8, tinggi = 6)
+function hitungLuasSegitiga() {
+    let alas = 8;
+    let tinggi = 6;
     let luas = (alas * tinggi) / 2;
-    document.getElementById("LuasTriangle").innerText = " Luasnyaaa: " + luas;
+
+    document.getElementById("hasilSegitiga").innerText = `Luas segitigasnya segini: ${luas}`;
 }
