@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pegawai</title>
+    <link rel="stylesheet" href="tabel.css">
+</head>
+<body>
+    <h2>Data Pegawai</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Umur</th>
+                <th>Jabatan</th>
+                <th>Status</th>
+                <th>Gaji Pokok</th>
+                <th>Tunjangan Jabatan</th>
+                <th>BPJS</th>
+                <th>Tunjangan Keluarga</th>
+                <th>Total Gaji</th>
+            </tr>
+        </thead>
+        <tbody id="pegawai-data"></tbody>
+        <tfoot>
+            <tr>
+                <td colspan="8" style="text-align: right;"><strong>Total Gaji:</strong></td>
+                <td id="total-gaji"></td>
+            </tr>
+        </tfoot>
+    </table>
+    <script src="gaji.js"></script>
+</body>
+</html>
