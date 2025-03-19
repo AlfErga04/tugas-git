@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Produk</title>
+    <link rel="stylesheet" href="tabel.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <input type="text" placeholder="Cari Produk..." class="search-bar">
+            <button id="btn-tambah" class="btn-tambah">Tambah <span>+</span></button>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nama Produk</th>
+                        <th>Harga</th>
+                        <th>Stok</th>
+                        <th>Tanggal Ditambahkan</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="produk-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Popup Form -->
+    <div id="popup-form" class="popup">
+        <div class="popup-content">
+            <span id="close-popup" class="close-btn">&times;</span>
+            <h2>Tambah Produk</h2>
+            <form id="form-produk">
+                <label for="nama">Nama Produk:</label>
+                <input type="text" id="nama" required>
+                
+                <div class="input-group">
+                    <div>
+                        <label for="harga">Harga:</label>
+                        <input type="number" id="harga" required>
+                    </div>
+                    <div>
+                        <label for="stok">Stok:</label>
+                        <input type="number" id="stok" required>
+                    </div>
+                </div>
+            
+                <button type="submit" class="btn-submit">Simpan</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="ngitungnya.js"></script>
+</body>
+</html>
