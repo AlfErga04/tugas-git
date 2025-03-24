@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Produk</title>
+    <link rel="stylesheet" href="tabelnya.css">
+</head>
+<body>
+    <h2>Daftar Produk</h2>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nama Barang</th>
+                <th>Harga</th>
+            </tr>
+        </thead>
+        <tbody id="product-list"></tbody>
+    </table>
+    
+    <button id="add-product-btn">Tambah</button>
+
+    <!-- Popup Form -->
+    <div id="popup">
+        <h3>Tambah Produk</h3>
+        <label>Nama Barang: <input type="text" id="product-name"></label><br><br>
+        <label>Harga: <input type="number" id="product-price"></label><br><br>
+        <button id="save-product-btn">Simpan</button>
+        <button id="close-popup">Batal</button>
+    </div>
+
+    <script src="tugas.js"></script>
+</body>
+</html>
