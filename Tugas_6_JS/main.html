@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Data</title>
+    <link rel="stylesheet" href="styling.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Data Pengguna</h1>
+
+        <form id="form-data">
+            <input type="text" id="nama" placeholder="Nama" required>
+            <input type="number" id="umur" placeholder="Umur" required>
+            <input type="text" id="alamat" placeholder="Alamat" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <button type="button" id="add-btn">Tambah Data</button>
+        </form>
+
+        <ul id="data-list"></ul>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="kontrolnya.js"></script>
+</body>
+</html>
