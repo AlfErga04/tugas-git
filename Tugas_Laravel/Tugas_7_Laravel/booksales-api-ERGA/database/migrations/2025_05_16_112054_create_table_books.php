@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->text('judul');
             $table->string('deskripsi');
-            $table->text('penulis');
             $table->integer('harga');
             $table->integer('stok');
             $table->foreignId('genre_id')->constrained('genres')->onDelete('cascade');

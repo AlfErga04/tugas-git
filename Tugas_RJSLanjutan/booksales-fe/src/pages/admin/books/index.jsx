@@ -1,20 +1,19 @@
+import {Link} from "react-router-dom"
 import { useEffect, useState } from "react";
 import { getBooks } from "../../../_service/books";
 import { getGenres } from "../../../_service/genres";
-import {Link} from "react-router-dom"
-import { getAuthors } from "../../../_service/author";
-
+import { getAuthors } from "../../../_service/authors";
 
 export default function AdminBooks() {
   const [books, setBooks] = useState([]);
   const [genres, setGenres] = useState([]);
   const [authors, setAuthors] = useState([]);
 
-  const [openDropDownId, setOpenDropDownId] = useState(null);
+  const [openDropdownId, setOpenDropdownId] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const [booksData, genresData, authorsData] = await Promise.all([
+      const [booksData, genresData, AuthorsData] = await Promise.all ([
         getBooks(),
         getGenres(),
         getAuthors(),
@@ -22,7 +21,7 @@ export default function AdminBooks() {
 
       setBooks(booksData)
       setGenres(genresData)
-      setAuthors(authorsData)
+      setAuthors(AuthorsData)
     }
 
     fetchData()
@@ -30,17 +29,19 @@ export default function AdminBooks() {
 
   const getGenreName = (id) => {
     const genre = genres.find((genre) => genre.id === id)
-    return genre ? genre.name : "Unkonwn genre"
+    return genre ? genre.name : "Unknown genre"
   }
 
   const getAuthorName = (id) => {
     const author = authors.find((author) => author.id === id)
-    return author ? author.name : "Unkonwn author"
+    return author ? author.nama : "Unknown author"
   }
+  
 
   const toggleDropdown = (id) => {
-    setOpenDropDownId(openDropDownId === id ? null : id)
+    setOpenDropdownId(openDropdownId === id ? null : id)
   }
+
   return (
     <>
       <section className="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5">
@@ -104,7 +105,7 @@ export default function AdminBooks() {
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                   <tr>
                     <th scope="col" className="px-4 py-3">
-                      Title
+                      Judul
                     </th>
                     <th scope="col" className="px-4 py-3">
                       Price
@@ -113,7 +114,7 @@ export default function AdminBooks() {
                       Stock
                     </th>
                     <th scope="col" className="px-4 py-3">
-                      Cover 
+                      Cover
                     </th>
                     <th scope="col" className="px-4 py-3">
                       Genre
@@ -127,6 +128,7 @@ export default function AdminBooks() {
                   </tr>
                 </thead>
                 <tbody>
+
                   { books.length > 0 ? 
                   books.map((book) => (
                   <tr key={book.id} className="border-b dark:border-gray-700">
@@ -134,13 +136,13 @@ export default function AdminBooks() {
                       scope="row"
                       className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                     >
-                      {book.judul};
+                      {book.judul}
                     </th>
                     <td className="px-4 py-3">{book.harga}</td>
                     <td className="px-4 py-3">{book.stok}</td>
-                    <td className="px-4 py-3">{book.cover_photo}</td>
-                    <td className="px-4 py-3">{ getGenreName(book.genre_id) }</td>
-                    <td className="px-4 py-3">{ getAuthorName(book.author_id) }</td>
+                    <td className="px-4 py-3">{book.cover}</td>
+                    <td className="px-4 py-3">{getGenreName(book.genre_id)}</td>
+                    <td className="px-4 py-3">{getAuthorName(book.author_id)}</td>
                     <td className="px-4 py-3 flex items-center justify-end relative">
                       <button
                         id={`dropdown-button-${book.id}`}
@@ -158,11 +160,12 @@ export default function AdminBooks() {
                           <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
                         </svg>
                       </button>
-                      {openDropDownId === book.id && (
+                      {
+                        openDropdownId === book.id && (
                       <div
                         id="apple-imac-27-dropdown"
                         className="absolute right-0 mt-2 z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600"
-                        style={{top : "100%", right: "0"}}
+                        style={{top: "100%", right: "0"}}
                       >
                         <ul
                           className="py-1 text-sm text-gray-700 dark:text-gray-200"
@@ -177,27 +180,28 @@ export default function AdminBooks() {
                             </Link>
                           </li>
                         </ul>
+                        
                         <div className="py-1">
-                          <Button
+                          <button
                             onClick={""}
                             className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                           >
                             Delete
-                          </Button>
+                          </button>
                         </div>
                       </div>
-                      )}
+                      )
+                      }
                     </td>
                   </tr>
                   )) : (
-                     <tr>
+                    <tr>
         <td colSpan={5} className="text-center py-4 text-gray-500">
           Data tidak ditemukan
         </td>
       </tr>
-                  )  
+                  )
                 }
-
                 </tbody>
               </table>
             </div>
