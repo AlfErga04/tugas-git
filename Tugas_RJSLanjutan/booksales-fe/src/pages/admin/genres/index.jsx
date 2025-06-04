@@ -108,6 +108,8 @@ export default function AdminGenres() {
                 <tr>
                   <td colSpan="3" className="text-center py-4 text-gray-500">
                     No genres found.
+
+                    try to reload web or solve the problem
                   </td>
                 </tr>
               )}
