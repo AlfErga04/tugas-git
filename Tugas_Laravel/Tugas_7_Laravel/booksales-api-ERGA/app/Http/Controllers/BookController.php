@@ -67,7 +67,7 @@ class BookController extends Controller
 
         if (!$book) {
             return response() -> json([
-                'success' => 'false',
+                'success' => false,
                 'message' => 'Resource not found'
             ], 404);
         }
@@ -84,13 +84,13 @@ class BookController extends Controller
 
         if (!$book) {
             return response() -> json([
-                'success' => 'false',
+                'success' => false,
                 'message' => 'Resource not found'
             ], 404);
         }
 
         if ($book->cover_photo) {
-            Storage::dosl('public')->delete('books/' . $book->cover_photo); 
+            Storage::disk('public')->delete('books/' . $book->cover_photo); 
         }
 
         $book->delete();
@@ -113,7 +113,6 @@ class BookController extends Controller
     $validator = Validator::make($request->all(), [
         'judul' => 'required|string|max:100',
         'deskripsi' => 'required|string',
-        'penulis' => 'required|string',
         'harga' => 'required|numeric',
         'stok' => 'required|numeric',
         'genre_id' => 'required|exists:genres,id',
